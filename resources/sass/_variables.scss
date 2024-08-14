@@ -1,0 +1,403 @@
+// Bootstrap
+@use 'bootstrap/scss/bootstrap';
+
+// Highlight.js
+@use "highlight.js/styles/idea.css";
+
+// light blue
+$theme50: #E1F5FE;
+$theme100: #B3E5FC;
+$theme200: #81D4FA;
+$theme300: #4FC3F7;
+$theme400: #29B6F6;
+$theme500: #03A9F4;
+$theme600: #039BE5;
+$theme700: #0288D1;
+$theme800: #0277BD;
+$theme900: #01579B;
+
+// accent color
+$accent100: #FF80AB;
+$accent200: #FF4081;
+$accent400: #F50057;
+$accent700: #C51162;
+
+// red
+$red50: #FFEBEE;
+$red100: #FFCDD2;
+$red200: #EF9A9A;
+$red300: #E57373;
+$red400: #EF5350;
+$red500: #F44336;
+$red600: #E53935;
+$red700: #D32F2F;
+$red800: #C62828;
+$red900: #B71C1C;
+
+// purple
+$purple50: #F3E5F5;
+$purple100: #E1BEE7;
+$purple200: #CE93D8;
+$purple300: #BA68C8;
+$purple400: #AB47BC;
+$purple500: #9C27B0;
+$purple600: #8E24AA;
+$purple700: #7B1FA2;
+$purple800: #6A1B9A;
+$purple900: #4A148C;
+
+// cyan
+$cyan50: #E0F7FA;
+$cyan100: #B2EBF2;
+$cyan200: #80DEEA;
+$cyan300: #4DD0E1;
+$cyan400: #26C6DA;
+$cyan500: #00BCD4;
+$cyan600: #00ACC1;
+$cyan700: #0097A7;
+$cyan800: #00838F;
+$cyan900: #006064;
+
+// green
+$green50: #E8F5E9;
+$green100: #C8E6C9;
+$green200: #A5D6A7;
+$green300: #81C784;
+$green400: #66BB6A;
+$green500: #4CAF50;
+$green600: #43A047;
+$green700: #388E3C;
+$green800: #2E7D32;
+$green900: #1B5E20;
+$greenA100: #B9F6CA;
+$greenA200: #69F0AE;
+$greenA400: #00E676;
+$greenA700: #00C853;
+
+// yellow
+$yellow50: #FFFDE7;
+$yellow100: #FFF9C4;
+$yellow200: #FFF59D;
+$yellow300: #FFF176;
+$yellow400: #FFEE58;
+$yellow500: #FFEB3B;
+$yellow600: #FDD835;
+$yellow700: #FBC02D;
+$yellow800: #F9A825;
+$yellow900: #F57F17;
+
+// grey
+$grey50: #FAFAFA;
+$grey100: #F5F5F5;
+$grey200: #EEEEEE;
+$grey300: #E0E0E0;
+$grey400: #BDBDBD;
+$grey500: #9E9E9E;
+$grey600: #757575;
+$grey700: #616161;
+$grey800: #424242;
+$grey900: #212121;
+
+$border-theme: 1px solid $theme400;
+$border-accent: 1px solid $accent200;
+$border-grey: 1px solid $grey300;
+
+/** background */
+.bg-theme50 {
+    background-color: $theme50;
+}
+.bg-theme100 {
+    background-color: $theme100;
+}
+.bg-theme200 {
+    background-color: $theme200;
+}
+.bg-theme300 {
+    background-color: $theme300;
+}
+.bg-theme400 {
+    background-color: $theme400;
+}
+.bg-theme500 {
+    background-color: $theme500;
+}
+.bg-theme600 {
+    background-color: $theme600;
+}
+.bg-theme700 {
+    background-color: $theme700;
+}
+.bg-theme800 {
+    background-color: $theme800;
+}
+.bg-theme900 {
+    background-color: $theme900;
+}
+.bg-accent100 {
+    background-color: $accent100;
+}
+.bg-accent200 {
+    background-color: $accent200;
+}
+.bg-accent400 {
+    background-color: $accent400;
+}
+.bg-accent700 {
+    background-color: $accent700;
+}
+.bg-grey50 {
+    background-color: $grey50;
+}
+.bg-grey100 {
+    background-color: $grey100;
+}
+.bg-grey200 {
+    background-color: $grey200;
+}
+.bg-grey300 {
+    background-color: $grey300;
+}
+.bg-grey400 {
+    background-color: $grey400;
+}
+.bg-grey500 {
+    background-color: $grey500;
+}
+.bg-grey600 {
+    background-color: $grey600;
+}
+.bg-grey700 {
+    background-color: $grey700;
+}
+.bg-grey800 {
+    background-color: $grey800;
+}
+.bg-grey900 {
+    background-color: $grey900;
+}
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Jetbrains Mono
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: local('JetBrains Mono'),
+    url('/storage/fonts/JetBrainsMono-Regular.woff2') format('woff2'),
+    url('/storage/fonts/JetBrainsMono-Regular.woff') format('woff');
+}
+
+// A タグ
+a {
+    color: $theme600;
+
+    &:hover {
+        color: $accent400;
+        text-decoration: none;
+    }
+
+    &:visited {
+        color: $theme900;
+
+        &:hover {
+            color: $accent400;
+        }
+    }
+
+    &.btn:visited {
+        color: white;
+    }
+
+    &.btn:hover {
+        color: white;
+    }
+}
+
+// コードブロック
+div.post-content code {
+    font-family: "JetBrains Mono", monospace;
+}
+
+// バッジ
+.badge {
+    margin: 0 2px;
+
+    &.badge-primary {
+        background-color: $theme500;
+    }
+
+    &.badge-secondary {
+        background-color: $grey500;
+    }
+
+    &.badge-info {
+        background-color: $cyan400;
+    }
+
+    &.badge-success {
+        background-color: $green400;
+    }
+
+    &.badge-warning {
+        background-color: $yellow300;
+    }
+
+    &.badge-danger {
+        background-color: $red400;
+    }
+
+    &.badge-dark {
+        background-color: $purple300;
+    }
+}
+
+// ボタン
+.btn-primary {
+    border-color: $theme500;
+    background-color: $theme500;
+}
+
+.btn-secondary {
+    border-color: $grey500;
+    background-color: $grey500;
+}
+
+.btn-info {
+    border-color: $cyan400;
+    background-color: $cyan400;
+}
+
+.btn-success {
+    border-color: $green400;
+    background-color: $green400;
+}
+
+.btn-warning {
+    border-color: $yellow300;
+    background-color: $yellow300;
+}
+
+.btn-danger {
+    border-color: $red400;
+    background-color: $red400;
+}
+
+.btn-dark {
+    border-color: $purple300;
+    background-color: $purple300;
+}
+
+// 記事
+div.post {
+    div.post-title {
+        padding: 4px 0 4px 8px;
+        background-color: $theme50;
+        font-size: 1.2em;
+
+        div.title {
+            a {
+                color: black;
+
+                &:hover {
+                    color: $accent700;
+                }
+            }
+        }
+
+        a {
+            span {
+                padding: 4px 8px;
+                font-size: 0.7em;
+            }
+        }
+    }
+
+    div.post-content {
+        h1 {
+            margin: 28px 0 16px;
+            padding: 4px;
+            border-bottom: 2px solid $theme100;
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+
+        h2 {
+            margin: 24px 0 12px;
+            padding: 8px 4px 8px 12px;
+            border-left: 8px solid $grey400;
+            background-color: $grey100;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        h3 {
+            margin: 20px 0 8px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        p {
+            margin: 24px 8px;
+            line-height: 1.8;
+        }
+
+        pre {
+            word-break: break-all;
+            word-wrap: break-word;
+
+            code.hljs {
+                padding: 12px;
+                border: $border-grey;
+                border-radius: 4px;
+                overflow-x: auto;
+                white-space: pre-wrap;
+                background-color: $grey50;
+            }
+        }
+        em.query {
+            color: $accent400;
+            font-weight: bold;
+            font-size: 110%;
+            font-style: normal;
+        }
+
+        ul,ol {
+            margin: 28px 0;
+        }
+
+        li {
+            line-height: 1.8;
+        }
+
+        code {
+            padding: 2px;
+            background-color: $grey50;
+        }
+
+        img {
+            display: block;
+            margin: 40px auto;
+            max-height: 320px;
+        }
+
+        blockquote {
+            padding: 4px 16px;
+            border-left: 8px solid $accent100;
+            background-color: $grey100;
+
+            p {
+                margin: 12px 0;
+                font-size: 0.9em;
+            }
+        }
+
+        iframe {
+            margin: 24px auto;
+            display: block;
+        }
+    }
+
+    div.comment {
+        margin: 20px;
+    }
+}

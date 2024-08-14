@@ -1,0 +1,182 @@
+@import "variables";
+
+// 全体
+body {
+    background-color: $theme50;
+    font-family: "BIZ UDPGothic", sans-serif;
+}
+
+// リンク
+a {
+    color: $theme700;
+    text-decoration: none;
+
+    &:hover {
+        color: $accent200;
+        text-decoration: underline;
+    }
+}
+
+// ヘッダ
+nav.navbar {
+    background-color: $theme600;
+    color: white;
+
+    a.navbar-brand {
+        color: white;
+        &:hover {
+            color: $accent100;
+        }
+    }
+}
+
+h5#month-list-title {
+    color: $grey900;
+}
+
+div#month-list {
+    h2 {
+        color: $grey900;
+        padding-bottom: 4px;
+        border-bottom: 1px solid $theme50;
+        margin-top: 24px;
+        font-size: 1.2em;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+// フッタ
+footer {
+    padding: 4px 8px;
+    background-color: $theme600;
+    color: white;
+}
+
+// 記事一覧
+div#content {
+    background-color: white;
+
+    div#calendar {
+        margin: 20px 0 0 12px;
+        font-size: 0.9em;
+
+        nav {
+            a.page-link {
+                font-size: 0.8em;
+                font-weight: bold;
+                border: 1px solid $grey300;
+                border-radius: 0;
+            }
+        }
+
+        table {
+            margin-top: 8px;
+
+            th {
+                border: 1px solid $grey300;
+            }
+
+            td {
+                border: 1px solid $grey300;
+                text-align: center;
+                font-size: 0.9em;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+
+                &.exists {
+                    background-color: $theme50;
+                }
+
+                &.grey {
+                    background-color: $grey100;
+                }
+            }
+        }
+    }
+
+    div#info {
+        margin-top: 20px;
+        font-size: 0.9em;
+        line-height: 1.7;
+    }
+
+    div#recent-comments {
+        margin-top: 20px;
+        font-size: 0.9em;
+        div.card {
+            border: 1px solid $grey300;
+            border-radius: 0;
+
+            div.card-header {
+                border-width: 0;
+            }
+        }
+
+        li.list-group-item {
+            border-width: 0;
+            border-top: 1px solid $grey300;
+            padding: 8px 12px;
+            font-size: 0.8em;
+
+            &.recent {
+                background-color: $theme50;
+            }
+        }
+    }
+
+    div.gallery {
+        div.image {
+            a {
+                height: 240px;
+                display: flex;
+                align-items: center;
+            }
+
+            img {
+                margin: 0 auto;
+                max-height: 240px;
+                display: block;
+            }
+        }
+
+        div.date {
+            font-size: 0.7em;
+        }
+
+        div.name {
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        div.tags {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        div.markdown {
+            margin-bottom: 4px;
+            border-radius: 4px;
+            border: 1px solid $grey300;
+            padding: 4px 8px;
+            background-color: $grey200;
+            font-size: 0.8em;
+        }
+    }
+
+    #posts-list {
+        width: 100%;
+        border: 1px solid $grey300;
+
+        th, td {
+            border: 1px solid $grey300;
+            padding: 4px 8px;
+        }
+
+        th {
+            background-color: $theme50;
+        }
+    }
+}

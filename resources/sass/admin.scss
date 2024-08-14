@@ -1,0 +1,240 @@
+@import "variables";
+
+// ダッシュボードのカレンダー
+div#calendar-header {
+    font: bold 130% sans-serif;
+}
+
+table#calendar {
+    width: 100%;
+    border: 1px solid $grey300;
+
+    th {
+        background-color: $grey100;
+    }
+
+    td {
+        height: 80px;
+        width: 14.28571428571429%;
+        vertical-align: top;
+        cursor: pointer;
+
+        div.date {
+            font: normal 90% Tahoma;
+            color: $grey600;
+
+            div {
+                font-size: 50%;
+            }
+        }
+
+        div.plans {
+            height: 52px;
+            padding: 4px;
+            font-size: 70%;
+            background-color: $yellow100;
+
+            a {
+                color: $grey700;
+                &:hover {
+                    color: $accent200;
+                }
+            }
+        }
+
+        &.grey {
+            background-color: $grey300;
+            color: $grey500;
+        }
+
+        &.sunday {
+            background-color: $red50;
+        }
+
+        &.saturday {
+            background-color: $theme50
+        }
+
+        &.today {
+            background-color: $greenA100;
+        }
+    }
+}
+
+// Task ヘッダ
+div#task-header {
+    font: bold 130% sans-serif;
+}
+div#task-header2 {
+    margin-top: -24px;
+}
+
+// Task
+div.task-group {
+    font: bold 120% sans-serif;
+}
+
+// ナビゲーションバー
+nav.navbar {
+    padding: 4px 1rem;
+    background-color: black;
+
+    a.navbar-brand {
+        font: bold 18px 'BIZ UDPGothic';
+    }
+}
+
+// Wiki サイドバー
+div#sidebar {
+    background-color: $grey100;
+
+    div#edit-sidebar {
+        margin: 0.25rem 12px -32px;
+        z-index: 1;
+        text-align: right;
+    }
+
+    h1 {
+        margin: 8px 4px 8px 12px;
+        padding: 4px 0;
+        border-bottom: 2px solid $grey300;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    h2 {
+        margin: 8px 4px 8px 12px;
+        padding: 4px 0;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+}
+
+// Wiki
+div.wiki {
+    div#edit-wiki {
+        margin: 0.25rem 12px -32px;
+        z-index: 1;
+        text-align: right;
+    }
+
+    h1 {
+        margin: 0 8px 20px;
+        padding: 4px 0;
+        border-bottom: 2px solid $grey300;
+        font-weight: bold;
+        font-size: 1.8em;
+    }
+
+    h2 {
+        margin: 4px 8px;
+        padding: 4px 0;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    h3 {
+        margin: 4px 8px;
+        padding: 4px 0;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+
+    h4 {
+        margin: 4px 8px;
+        padding: 4px 0;
+        font-weight: bold;
+        font-size: 1.0em;
+    }
+
+    p {
+        margin: 24px 8px;
+        line-height: 1.8;
+    }
+
+    pre {
+        word-break: break-all;
+        word-wrap: break-word;
+
+        code.hljs {
+            padding: 12px;
+            border: $border-grey;
+            border-radius: 4px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            background-color: $grey100;
+        }
+    }
+    em.query {
+        color: $accent400;
+        font-weight: bold;
+        font-size: 110%;
+        font-style: normal;
+    }
+
+    ul,ol {
+        margin: 12px 0;
+    }
+
+    li {
+        line-height: 1.8;
+    }
+
+    code {
+        padding: 2px;
+        background-color: $grey100;
+    }
+
+    img {
+        display: block;
+        margin: 40px auto;
+        max-height: 320px;
+    }
+
+    blockquote {
+        padding: 4px 16px;
+        border-left: 20px solid $accent700;
+        background-color: $grey200;
+
+        p {
+            margin: 12px 0;
+            font-size: 0.9em;
+        }
+    }
+
+    iframe {
+        margin: 24px auto;
+        display: block;
+    }
+}
+
+// 記事投稿, 更新
+div#post {
+    select#tag {
+        height: 240px;
+    }
+
+    div.recent-image {
+        div.image {
+            height: 80px;
+            display: flex;
+            align-items: center;
+
+            img {
+                margin: 0 auto;
+                max-height: 80px;
+                display: block;
+            }
+        }
+
+        div.markdown {
+            font-size: 10px;
+            font-weight: bold;
+        }
+    }
+}
+
+// タスク一覧
+form.delete-task-form {
+    display: inline;
+}
