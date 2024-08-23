@@ -1,5 +1,21 @@
 @import "variables";
 
+// 全体
+body {
+    font-family: "BIZ UDPGothic", sans-serif;
+}
+
+// リンク
+a {
+    color: $theme700;
+    text-decoration: none;
+
+    &:hover {
+        color: $accent200;
+        text-decoration: underline;
+    }
+}
+
 // ダッシュボードのカレンダー
 div#calendar-header {
     font: bold 130% sans-serif;

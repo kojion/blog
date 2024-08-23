@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('title')</title>
-        @vite(['resources/sass/blog.scss', 'resources/js/app.js'])
+        @vite(['resources/sass/blog.scss', 'resources/js/blog.js'])
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106568102-1"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
