@@ -49,13 +49,13 @@ class Backup extends Command
         $zip = new ZipArchive();
         $path = storage_path('app/backup/' . date('Ymd-Hi') . '.zip');
         $this->comment("ファイルパス: $path");
-        if ($res = $zip->open($path, ZipArchive::CREATE) !== true) {
+        if (($res = $zip->open($path, ZipArchive::CREATE)) !== true) {
             $this->error("zip ファイル作成失敗. エラーコード: ". (string) $res);
             return;
         }
 
         // DB ファイル追加
-        $databasePath = database_path('default.sqlite');
+        $databasePath = database_path('database.sqlite');
         $zip->addFile($databasePath, basename($databasePath));
 
         // 画像ファイル追加
