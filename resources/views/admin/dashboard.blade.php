@@ -114,7 +114,7 @@
     @foreach($backups as $backup)
                 <tr>
                     <td class="px-2">{{ $backup['last_modified']->format('Y-m-d H:i') }}</td>
-                    <td class="px-2 text-right font-weight-bold">{{ number_format($backup['size'] / 1073741824, 2) }} GB</td>
+                    <td class="px-2 text-end font-weight-bold">{{ number_format($backup['size'] / 1073741824, 2) }} GB</td>
                 </tr>
     @endforeach
             </table>
@@ -130,7 +130,7 @@
                 <tr>
                     <td class="px-2"><a href="/admin/wikis/{{ $wiki->id }}">{{ $wiki->title }}</a></td>
                     <td class="px-2">{{ $wiki->updated_at->format('Y-m-d H:i') }}</td>
-                    <td class="px-2 text-right"><a href="/admin/histories/{{ $wiki->last_history->id }}">{{ $wiki->histories_count }}</a></td>
+                    <td class="px-2 text-end"><a href="/admin/histories/{{ $wiki->last_history->id }}">{{ $wiki->histories_count }}</a></td>
                 </tr>
     @endforeach
             </table>
