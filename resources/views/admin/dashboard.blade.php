@@ -88,14 +88,17 @@
                     {{ $days === 2 ? '昨日' : ($days - 1) . " 日前" }}までの記事を投稿しておりません！
                 </div>
             @endif
-            <div class="mt-2 mb-1 font-weight-bold text-center">記事 (更新日時順)</div>
+            <div class="mt-2 mb-1 fw-bold text-center">記事 (更新日時順)</div>
             <table class="table table-sm table-bordered">
-                <tr class="thead-dark">
-                    <th class="text-center">ID</th>
-                    <th class="text-center">年月日</th>
-                    <th class="text-center">タイトル</th>
-                    <th class="text-center">更新日時</th>
-                </tr>
+                <thead class="table-dark">
+                    <tr>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">年月日</th>
+                        <th class="text-center">タイトル</th>
+                        <th class="text-center">更新日時</th>
+                    </tr>
+                </thead>
+                <tbody>
                 @foreach($posts as $post)
                     <tr>
                         <td class="px-2 text-center"><a href="/posts/{{ $post->id }}">{{ $post->id }}</a></td>
@@ -104,35 +107,44 @@
                         <td class="px-2 text-end">{{ $post->updated_at->format('m-d H:i') }}</td>
                     </tr>
                 @endforeach
+                </tbody>
             </table>
-            <div class="mb-1 font-weight-bold text-center">バックアップ</div>
+            <div class="mb-1 fw-bold text-center">バックアップ</div>
             <table class="table table-sm table-bordered">
-                <tr class="thead-dark">
-                    <th class="text-center">日時</th>
-                    <th class="text-center">サイズ</th>
-                </tr>
+                <thead class="table-dark">
+                    <tr>
+                        <th class="text-center">日時</th>
+                        <th class="text-center">サイズ</th>
+                    </tr>
+                </thead>
+                <tbody>
     @foreach($backups as $backup)
-                <tr>
-                    <td class="px-2">{{ $backup['last_modified']->format('Y-m-d H:i') }}</td>
-                    <td class="px-2 text-end font-weight-bold">{{ number_format($backup['size'] / 1073741824, 2) }} GB</td>
-                </tr>
+                    <tr>
+                        <td class="px-2">{{ $backup['last_modified']->format('Y-m-d H:i') }}</td>
+                        <td class="px-2 text-end font-weight-bold">{{ number_format($backup['size'] / 1073741824, 2) }} GB</td>
+                    </tr>
     @endforeach
+                </tbody>
             </table>
 
-            <div class="font-weight-bold text-center mt-2 mb-1">Wiki 日時順</div>
+            <div class="fw-bold text-center mt-2 mb-1">Wiki 日時順</div>
             <table class="table table-sm table-bordered">
-                <tr class="thead-dark">
-                    <th class="text-center">タイトル</th>
-                    <th class="text-center">最終更新</th>
-                    <th class="text-center">履歴数</th>
-                </tr>
+                <thead class="table-dark">
+                    <tr>
+                        <th class="text-center">タイトル</th>
+                        <th class="text-center">最終更新</th>
+                        <th class="text-center">履歴数</th>
+                    </tr>
+                </thead>
+                <tbody>
     @foreach($wikis as $wiki)
-                <tr>
-                    <td class="px-2"><a href="/admin/wikis/{{ $wiki->id }}">{{ $wiki->title }}</a></td>
-                    <td class="px-2">{{ $wiki->updated_at->format('Y-m-d H:i') }}</td>
-                    <td class="px-2 text-end"><a href="/admin/histories/{{ $wiki->last_history->id }}">{{ $wiki->histories_count }}</a></td>
-                </tr>
+                    <tr>
+                        <td class="px-2"><a href="/admin/wikis/{{ $wiki->id }}">{{ $wiki->title }}</a></td>
+                        <td class="px-2">{{ $wiki->updated_at->format('Y-m-d H:i') }}</td>
+                        <td class="px-2 text-end"><a href="/admin/histories/{{ $wiki->last_history->id }}">{{ $wiki->histories_count }}</a></td>
+                    </tr>
     @endforeach
+                </tbody>
             </table>
         </div>
         <div class="col-12 col-sm-3 pt-3">
