@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -37,6 +37,6 @@ class LoginController extends Controller
                 $error = 'メールアドレスかパスワードが間違っています。';
             }
         }
-        return view('admin.login', compact('error'));
+        return view('auth.login', compact('error'));
     }
 }

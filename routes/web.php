@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\LoginController;
-use App\Http\Controllers\Admin\LogoutController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Blog\ImagesController;
 use App\Http\Controllers\Blog\ListController;
 use App\Http\Controllers\Blog\PostsController;
