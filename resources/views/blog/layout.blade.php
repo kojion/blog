@@ -19,7 +19,7 @@
         <div id="app" class="container" data-token="{{ \Auth::user()->api_token ?? null }}">
             <nav class="navbar navbar-expand-lg px-2 px-md-4">
                 <a href="/" class="navbar-brand">コジオニルク</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-supported-content" aria-controls="navbar-supported-content" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-supported-content" aria-controls="navbar-supported-content" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar-supported-content">
