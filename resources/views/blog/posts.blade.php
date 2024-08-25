@@ -194,9 +194,9 @@
         <div class="alert alert-warning mt-3 mx-4">この記事は非公開です。</div>
         @endif
         <div class="post-content px-1 px-sm-2 px-md-4">{!! $post->html !!}</div>
-        <div class="add-comment text-right px-4">
+        <div class="add-comment text-end px-4">
             @if (\Illuminate\Support\Facades\Auth::check())
-            <a class="btn btn-primary btn-sm mr-2" href="/admin/posts/edit/{{ $post->id }}">記事編集</a>
+            <a class="btn btn-primary btn-sm me-2" href="/admin/posts/edit/{{ $post->id }}">記事編集</a>
             @endif
         </div>
     </div>
