@@ -174,7 +174,7 @@
     @foreach($posts as $post)
     <div class="post p-1 p-sm-2 p-md-4 {{ $loop->first ? '' : 'mt-4' }}">
         <a name="{{ $post->day }}"></a>
-        <div class="post-title row ml-1 ml-md-2 mr-1 mr-md-2 py-1">
+        <div class="post-title row mx-1 mx-md-2 py-1">
             <div class="title col">
         @if(isset($post->date))
                 {{ $post->date }}&nbsp;&nbsp;&nbsp;{{ $post->name }}
@@ -182,7 +182,7 @@
                 <a href="/posts/{{ $post->id }}">{{ $post->year }}/{{ $post->month }}/{{ $post->day }}&nbsp;&nbsp;&nbsp;{{ $post->name }}</a>
         @endif
             </div>
-            <div class="post-tags col-md-auto d-none d-md-block text-right">
+            <div class="post-tags col-md-auto d-none d-md-block text-end">
         @foreach($post->tags as $tag)
                 <a href="/posts?tag_id={{ $tag ? $tag->id : ''}}">
                     <span class="badge badge-{{ \App\Models\Tag::BOOTSTRAP_CLASSES[$tag->color] }}">{{ $tag->name }}</span>
