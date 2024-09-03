@@ -47,11 +47,11 @@
     @endforeach
                     </div>
                 </div>
-                <div class="input-group mb-3 col-3">
+                <div class="mb-3 col-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text" id="tag-label">タグ</span>
                     </div>
-                    <select class="custom-select @error('tags') is-invalid @enderror" id="tags" name="tags[]" multiple="multiple">
+                    <select class="form-select @error('tags') is-invalid @enderror" id="tags" name="tags[]" multiple="multiple">
     @foreach($tags as $tag)
                         <option value="{{ $tag->id }}"
                             @if(in_array($tag->id, old('tags') ?? [])) selected="selected" @endif>
@@ -71,9 +71,9 @@
     @enderror
             </div>
             <div class="input-group mb-3">
-                <input type="submit" class="btn btn-secondary ml-auto" value="プレビュー"/>
-                <input id="post-disabled-store" type="button" class="btn btn-secondary ml-2" value="非公開"/>
-                <input id="post-enabled-store" type="button" class="btn btn-info ml-2" value="公開"/>
+                <input type="submit" class="btn btn-secondary ms-auto" value="プレビュー"/>
+                <input id="post-disabled-store" type="button" class="btn btn-secondary" value="非公開"/>
+                <input id="post-enabled-store" type="button" class="btn btn-info" value="公開"/>
             </div>
         </form>
         <div class="post col-12 col-xl-7 mt-3">

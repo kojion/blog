@@ -28,11 +28,11 @@
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
-            <div class="input-group mb-3">
+            <div class="mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="tag-label">タグ</span>
                 </div>
-                <select class="custom-select @error('tags') is-invalid @enderror" id="tags" name="tags[]" multiple="multiple" style="height: 320px;">
+                <select class="form-select @error('tags') is-invalid @enderror" id="tags" name="tags[]" multiple="multiple" style="height: 320px;">
                     @foreach($tags as $tag)
                         <option value="{{ $tag->id }}"
                                 @if(in_array($tag->id, old('tags') ?? [])) selected="selected" @endif>
@@ -47,8 +47,7 @@
     @if(request()->segment(3) === 'create')
             <div class="input-group mb-3">
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input @error('file') is-invalid @enderror" id="file" name="file"/>
-                    <label class="custom-file-label" for="file">ファイル選択...</label>
+                    <input type="file" class="form-control @error('file') is-invalid @enderror" id="file" name="file"/>
                 </div>
             </div>
         @error('file')
@@ -56,9 +55,9 @@
         @enderror
     @endif
             <div class="input-group mb-3">
-                <input type="submit" id="save-image" class="btn btn-primary ml-auto" value="保存"/>
+                <input type="submit" id="save-image" class="btn btn-primary ms-auto" value="保存"/>
     @if(request()->segment(3) === 'edit')
-                <input type="button" id="delete-image" class="btn btn-danger ml-3" value="削除"/>
+                <input type="button" id="delete-image" class="btn btn-danger" value="削除"/>
     @endif
             </div>
         </form>
