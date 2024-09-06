@@ -96,7 +96,15 @@ nav.navbar {
     background-color: black;
 
     a.navbar-brand {
+        color: white;
         font: bold 18px 'BIZ UDPGothic';
+    }
+
+    a.nav-link {
+        color: #ffffffaa;
+        &.active {
+            color: white;
+        }
     }
 }
 

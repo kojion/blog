@@ -28,6 +28,13 @@ nav.navbar {
             color: $accent100;
         }
     }
+
+    a.nav-link {
+        color: #ffffffaa;
+        &.active {
+            color: white;
+        }
+    }
 }
 
 h5#month-list-title {
