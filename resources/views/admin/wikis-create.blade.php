@@ -22,10 +22,10 @@
     @enderror
             </div>
             <div class="input-group mb-3">
-                <input type="submit" class="btn btn-secondary ml-auto" value="プレビュー"/>
-                <input id="store-wiki" type="submit" class="btn btn-info ml-2" value="保存"/>
+                <input type="submit" class="btn btn-secondary ms-auto" value="プレビュー"/>
+                <input id="store-wiki" type="submit" class="btn btn-info" value="保存"/>
                 @if(request()->segment(3) === 'edit' && request()->segment(4) !== '1')
-                    <input id="delete-wiki" type="button" class="btn btn-danger ml-2" value="削除"/>
+                    <input id="delete-wiki" type="button" class="btn btn-danger" value="削除"/>
                 @endif
             </div>
             <div class="wiki">
