@@ -117,7 +117,7 @@
                 </tbody>
             </table>
         </div>
-        <div id="info" class="col d-none d-md-block p-2 mt-4">
+        <div id="info" class="col d-none d-md-block p-2 mt-4 me-md-4 me-xl-0">
             <p>
                 ここは Web や Android アプリのプログラマでありチェスやバイク、株式投資を趣味とするコジオンこと Hideyuki Kojima の日記です。
                 毎日何かしら欠かさず書いています。
@@ -128,7 +128,7 @@
                 連絡はメールでお願いします。kojionilk あっとまーく gmail どっと com です。
             </p>
         </div>
-        <div class="col d-none d-xl-block py-4">
+        <div class="col d-none d-xl-block py-4 me-xl-4">
             <div class="alert alert-primary mx-2" role="alert">
                 <div>{{ $firstDate->year }}/{{ $firstDate->month }}/{{ $firstDate->day }} から日記を書いています。</div>
                 <div>今まで <strong>{{ $count }}</strong> 件の日記を書きました。</div>
