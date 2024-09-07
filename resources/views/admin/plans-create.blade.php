@@ -49,9 +49,9 @@
                 @enderror
             </div>
             <div class="input-group mb-3">
-                <input id="store-plan" type="submit" class="btn btn-info ml-auto" value="保存"/>
+                <input id="store-plan" type="submit" class="btn btn-info ms-auto" value="保存"/>
                 @if(request()->segment(3) === 'edit')
-                    <input id="delete-plan" type="button" class="btn btn-danger ml-2" value="削除"/>
+                    <input id="delete-plan" type="button" class="btn btn-danger" value="削除"/>
                 @endif
             </div>
         </form>
