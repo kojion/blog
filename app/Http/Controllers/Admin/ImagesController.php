@@ -10,7 +10,9 @@ use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
-use Intervention\Image\Facades\Image;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\Image;
+use Intervention\Image\ImageManager;
 
 class ImagesController extends Controller
 {
@@ -54,17 +56,16 @@ class ImagesController extends Controller
         $file->storeAs('public/image', "$datetime.$extension");
 
         // サムネイル画像 max-width が横長画像なら 800, 縦長なら 800 以内になるようにする
+        $manager = new ImageManager(new Driver());
         foreach ([1 => '', 2 => '@2x', 3 => '@3x'] as $ratio => $label) {
-            $image = Image::make($file);
-            $image->orientate();
-            $originalWidth = $image->getWidth();
-            $originalHeight = $image->getHeight();
+            $image = $manager->read($file->getRealPath());
+            $image = $image->orient();
+            $originalWidth = $image->width();
+            $originalHeight = $image->height();
             $isLandscape = $originalWidth > $originalHeight;
             $width = $isLandscape ? 800 * $ratio : null;
             $height = $isLandscape ? null : 800 * $ratio;
-            $image->resize($width, $height, function ($constraint) {
-                $constraint->aspectRatio();
-            })->save(storage_path("app/public/thumbnail/$datetime$label.$extension"));
+            $image->scale($width, $height)->save(storage_path("app/public/thumbnail/$datetime$label.$extension"));
         }
 
         // ファイル名が無い場合日付で補う
