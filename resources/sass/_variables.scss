@@ -240,10 +240,16 @@ div.post-content code {
 
     &.badge-warning {
         background-color: $yellow300;
+        color: $grey700;
     }
 
     &.badge-danger {
         background-color: $red400;
+    }
+
+    &.badge-light {
+        background-color: $grey100;
+        color: $grey700;
     }
 
     &.badge-dark {
