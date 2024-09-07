@@ -161,15 +161,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="task-modal-label">ToDo</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="/admin/tasks" method="POST">
                         <div class="form-group">
                             {{ csrf_field() }}
-                            <select class="custom-select" name="task_group_id">
+                            <select class="form-select" name="task_group_id">
     @foreach($taskGroups as $taskGroup)
                                 <option value="{{ $taskGroup->id }}">{{ $taskGroup->name }}</option>
     @endforeach
@@ -179,7 +177,7 @@
                             <label for="task-modal-name">タスク</label>
                             <input type="text" name="name" class="form-control" id="task-modal-name" placeholder="タスク">
                         </div>
-                        <div class="form-group text-right">
+                        <div class="form-group text-end mt-2">
                             <input type="submit" class="btn btn-primary" value="登録"/>
                         </div>
                     </form>
