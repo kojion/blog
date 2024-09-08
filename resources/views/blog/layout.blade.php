@@ -53,7 +53,7 @@
     @endif
 @yield('content')
             </div>
-            <footer class="text-end container">これは個人の日記帳です。 Copyright © 2016 - 2024 Hideyuki Kojima.</footer>
+            <footer class="text-end container-xl">これは個人の日記帳です。 Copyright © 2016 - 2024 Hideyuki Kojima.</footer>
         </div>
     </body>
 </html>
