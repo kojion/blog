@@ -172,7 +172,7 @@
     @endif
 
     @foreach($posts as $post)
-    <div class="post p-1 p-sm-2 p-md-4 {{ $loop->first ? '' : 'mt-4' }}">
+    <div class="post p-1 p-sm-2 p-xl-4 {{ $loop->first ? '' : 'mt-4' }}">
         <a name="{{ $post->day }}"></a>
         <div class="post-title row mx-1 mx-md-2 py-1">
             <div class="title col">
