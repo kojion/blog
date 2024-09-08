@@ -9,6 +9,7 @@ use App\Models\TaskGroup;
 use App\Models\Wiki;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
@@ -78,7 +79,7 @@ class DashboardController extends Controller
             ->sort(fn($x, $y) => Storage::lastModified($x) - Storage::lastModified($y) < 0)
             ->map(fn($x) => [
                 'name' => basename($x),
-                'last_modified' => Carbon::createFromTimestamp(Storage::lastModified($x)),
+                'last_modified' => Carbon::createFromTimestamp(Storage::lastModified($x), config('app.timezone')),
                 'size' => Storage::size($x)
             ])->toArray();
 
