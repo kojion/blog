@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+    'google' => [
+        'private_key' => env('SERVICES_GOOGLE_PRIVATE_KEY'),
+        'client_email' => env('SERVICES_GOOGLE_CLIENT_EMAIL'),
+        'client_id' => env('SERVICES_GOOGLE_CLIENT_ID'),
+        'drive_id' => env('SERVICES_GOOGLE_DRIVE_ID'),
+    ]
 ];
