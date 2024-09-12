@@ -129,7 +129,7 @@
             </p>
         </div>
         <div class="col d-none d-xl-block py-2 me-xl-4">
-            <div class="pt-2 text-center">
+            <div class="pt-1 text-center">
                 <img src="logo.png" width="30%" height="30%"/>
             </div>
             <div class="text-center small fw-bold">
@@ -141,7 +141,7 @@
             <div class="text-center small fw-bold">
                 <a href="https://x.com/zbxah">X (旧 Twitter)</a>
             </div>
-            <div class="alert alert-secondary mx-2 mt-2" role="alert">
+            <div class="alert alert-secondary mx-2 mt-3 small" role="alert">
                 <div>{{ $firstDate->year }}/{{ $firstDate->month }}/{{ $firstDate->day }} から日記を書いています。</div>
                 <div>今まで <strong>{{ $count }}</strong> 件の日記を書きました。</div>
             </div>
