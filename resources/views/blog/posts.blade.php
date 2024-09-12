@@ -66,7 +66,7 @@
 @section('content')
     @isset($firstDate)
     <div class="row">
-        <div id="calendar" class="col mx-4 mb-2">
+        <div id="calendar" class="col mx-4 mb-1">
             <nav>
                 <ul class="pagination justify-content-center">
                     <li class="page-item @if($firstDate->year === $year && $firstDate->month === $month) disabled @endif">
@@ -128,8 +128,20 @@
                 連絡はメールでお願いします。kojionilk あっとまーく gmail どっと com です。
             </p>
         </div>
-        <div class="col d-none d-xl-block py-4 me-xl-4">
-            <div class="alert alert-primary mx-2" role="alert">
+        <div class="col d-none d-xl-block py-2 me-xl-4">
+            <div class="pt-2 text-center">
+                <img src="logo.png" width="30%" height="30%"/>
+            </div>
+            <div class="text-center small fw-bold">
+                <a href="https://youtube.com/channel/UCVqCcOKMgrti7Y5v20GX0oA">コジオン: チェス実況 (YouTube)</a>
+            </div>
+            <div class="text-center small fw-bold">
+                <a href="https://kojion.github.io/chess">チェスサイト (kojion.github.io)</a>
+            </div>
+            <div class="text-center small fw-bold">
+                <a href="https://x.com/zbxah">X (旧 Twitter)</a>
+            </div>
+            <div class="alert alert-secondary mx-2 mt-2" role="alert">
                 <div>{{ $firstDate->year }}/{{ $firstDate->month }}/{{ $firstDate->day }} から日記を書いています。</div>
                 <div>今まで <strong>{{ $count }}</strong> 件の日記を書きました。</div>
             </div>
