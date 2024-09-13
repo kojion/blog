@@ -7,7 +7,7 @@
     <meta name="twitter:site" content="@kojionilk"/>
     <meta name="twitter:description" content="{{ is_numeric(request()->segment(2)) ? mb_substr($posts[0]->markdown, 0, 100): "日記帳です。" }}"/>
     <meta name="twitter:card" content="{{ count($posts) > 0 && $posts[0]->first_image_url ? 'summary_large_image' : 'summary' }}"/>
-    <meta name="twitter:image" content="{{ count($posts) > 0 && $posts[0]->first_image_url ? $posts[0]->first_image_url : 'http://www.kojion.com/twitter.png' }}"/>
+    <meta name="twitter:image" content="{{ count($posts) > 0 && $posts[0]->first_image_url ? $posts[0]->first_image_url : 'https://www.kojion.com/logo.png' }}"/>
 @endsection
 
 @section('navbar')
