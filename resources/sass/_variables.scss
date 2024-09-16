@@ -179,14 +179,6 @@ $border-grey: 1px solid $grey300;
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Jetbrains Mono
-@font-face {
-    font-family: 'JetBrains Mono';
-    src: local('JetBrains Mono'),
-    url('/storage/fonts/JetBrainsMono-Regular.woff2') format('woff2'),
-    url('/storage/fonts/JetBrainsMono-Regular.woff') format('woff');
-}
-
 // A タグ
 a {
     color: $theme600;
@@ -215,7 +207,7 @@ a {
 
 // コードブロック
 div.post-content code {
-    font-family: "JetBrains Mono", monospace;
+    font-family: "JetBrains Mono", Consolas, monospace;
 }
 
 // バッジ
