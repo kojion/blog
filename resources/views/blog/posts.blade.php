@@ -189,7 +189,7 @@
                 <div class="modal-body row">
                     <h2 class="col-12">タグ別</h2>
                     @foreach($tags as $x)
-                        <div class="col-lg-3 col-md-4 col-6 text-end">
+                        <div class="col-lg-3 col-6 text-end">
                             <a href="/posts?tag_id={{ $x->id }}">
                                 {{ $x->name }}
                                 <span class="badge badge-pill badge-{{ \App\Models\Tag::BOOTSTRAP_CLASSES[$x->color] }}">
@@ -203,7 +203,7 @@
                         @if($loop->index === 0 || $yearMonth->year !== $yearMonths[$loop->index - 1]->year)
                             <h2 class="col-12">{{ $yearMonth->year }} 年</h2>
                         @endif
-                        <div class="col-lg-3 col-md-4 col-6 text-end">
+                        <div class="col-lg-3 col-6 text-end">
                             <a href="posts?year={{ $yearMonth->year }}&month={{ $yearMonth->month }}">
                                 {{ $yearMonth->year }} 年 {{ $yearMonth->month }} 月
                                 <span class="badge badge-pill badge-primary">{{ $yearMonth->count }}</span>
