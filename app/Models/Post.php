@@ -86,6 +86,9 @@ class Post extends Model
         $pattern = '/<table.*?>/';
         $replacement = '<table class="table table-bordered table-sm">';
         $html = preg_replace($pattern, $replacement, $html);
+        $pattern = '/<thead.*?>/';
+        $replacement = '<thead class="table-light text-center">';
+        $html = preg_replace($pattern, $replacement, $html);
         return $html;
     }
 
