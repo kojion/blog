@@ -74,7 +74,11 @@
                     <tr>
             @foreach($chunk as $date)
                         <td class="@if($date->month != $month) grey @elseif(in_array($date->day, $existsDates)) exists @endif">
+                            @if($date->month == $month and in_array($date->day, $existsDates))
+                            <a href="#day{{ $date->day }}">{{ $date->day }}</a>
+                            @else
                             {{ $date->day }}
+                            @endif
                         </td>
             @endforeach
                     </tr>
@@ -149,8 +153,7 @@
     @endif
 
     @foreach($posts as $post)
-    <div class="post p-1 p-sm-2 p-xl-4 {{ $loop->first ? '' : 'mt-4' }}">
-        <a name="{{ $post->day }}"></a>
+    <div id="day{{ $post->day }}" class="post p-1 p-sm-2 p-xl-4 {{ $loop->first ? '' : 'mt-4' }}">
         <div class="post-title row mx-1 mx-md-2 py-1">
             <div class="title col">
         @if(isset($post->date))
